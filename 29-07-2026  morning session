@@ -1,0 +1,132 @@
+Write a program to find Maximum between two numbers.
+import java.util.Scanner;
+
+public class TernaryPractice {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter two numbers: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        int max2 = (a > b) ? a : b;
+
+        System.out.println("Maximum of two numbers: " + max2);
+
+        sc.close();
+    }
+}
+Output:
+Enter two numbers: 44 55
+Maximum of two numbers: 55
+
+=== Code Execution Successful ===
+
+Write a program to find Maximum between three numbers.
+import java.util.Scanner;
+
+public class TernaryPractice {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter three numbers: ");
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        int z = sc.nextInt();
+
+        int max3 = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
+
+        System.out.println("Maximum of three numbers: " + max3);
+
+        sc.close();
+    }
+}
+Output:
+Enter three numbers: 15 45 30
+Maximum of three numbers: 45
+
+=== Code Execution Successful ===
+
+Write a program to check whether a character is alphabetic or not. 
+import java.util.Scanner;
+
+public class TernaryPractice {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a character: ");
+        char ch = sc.next().charAt(0);
+
+        String result = Character.isLetter(ch) ? "Alphabetic" : "Not Alphabetic";
+
+        System.out.println(ch + " is: " + result);
+
+        sc.close();
+    }
+}
+Output:
+Enter a character: p
+p is: Alphabetic
+
+=== Code Execution Successful ===
+
+Write a program to input any alphabet and check whether it is a vowel or consonant.
+import java.util.Scanner;
+
+public class TernaryPractice {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter an alphabet: ");
+        char ch = sc.next().charAt(0);
+
+        char lower = Character.toLowerCase(ch);
+
+        String result = (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u')
+                ? "Vowel"
+                : "Consonant";
+
+        System.out.println(ch + " is: " + result);
+
+        sc.close();
+    }
+}
+Output:
+Enter an alphabet: i
+i is: Vowel
+
+=== Code Execution Successful ===
+
+Write a program to input any character and check whether it is an alphabet, digit, or special character.
+import java.util.Scanner;
+
+public class TernaryPractice {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter any character: ");
+        char ch = sc.next().charAt(0);
+
+        String type = Character.isLetter(ch) ? "Alphabet"
+                : Character.isDigit(ch) ? "Digit"
+                : "Special Character";
+
+        System.out.println(ch + " is: " + type);
+
+        sc.close();
+    }
+}
+Output:
+Enter any character: 5
+5 is: Digit
+
+=== Code Execution Successful ===
+Enter any character: p
+p is: Alphabet
+
+=== Code Execution Successful ===
+
+Enter any character: @
+@ is: Special Character
+
+=== Code Execution Successful ===
