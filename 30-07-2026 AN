@@ -127,6 +127,7 @@ public class Main {
             System.out.print(arr[i] + " ");
         }
     }
+}
     output:
           50 40 30 20 10
 
@@ -210,6 +211,8 @@ public class Main {
 
         for (int i = 0; i < b.length; i++)
             merged[a.length + i] = b[i];
+
+        System.out.print("Merged Array: ");
 
         for (int num : merged)
             System.out.print(num + " ");
