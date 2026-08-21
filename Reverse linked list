@@ -1,0 +1,66 @@
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+public class Main {
+
+    Node head;
+
+    void reverse() {
+        Node prev = null;
+        Node current = head;
+
+        while (current != null) {
+            Node next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        head = prev;
+    }
+
+    void printList() {
+        Node current = head;
+
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+
+        System.out.println("null");
+    }
+
+    public static void main(String[] args) {
+
+        Main list = new Main();
+
+        list.head = new Node(10);
+        list.head.next = new Node(20);
+        list.head.next.next = new Node(30);
+        list.head.next.next.next = new Node(40);
+
+        System.out.println("Before reversing:");
+        list.printList();
+
+        list.reverse();
+
+        System.out.println("After reversing:");
+        list.printList();
+    }
+}
+
+
+output:
+Before reversing:
+10 -> 20 -> 30 -> 40 -> null
+After reversing:
+40 -> 30 -> 20 -> 10 -> null
+
+=== Code Execution Successful ===
