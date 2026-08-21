@@ -1,0 +1,63 @@
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+public class Main {
+
+    static ListNode detectCycle(ListNode head) {
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        // Step 1: Find if a cycle exists
+        while (fast != null && fast.next != null) {
+
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) {
+
+                // Step 2: Find the starting node
+                ListNode start = head;
+
+                while (start != slow) {
+                    start = start.next;
+                    slow = slow.next;
+                }
+
+                return start;
+            }
+        }
+
+        // No cycle
+        return null;
+    }
+
+    public static void main(String[] args) {
+
+        ListNode head = new ListNode(3);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(0);
+        head.next.next.next = new ListNode(-4);
+
+        // Create cycle: -4 -> 2
+        head.next.next.next.next = head.next;
+
+        ListNode cycleStart = detectCycle(head);
+
+        if (cycleStart != null) {
+            System.out.println("Cycle starts at: " + cycleStart.val);
+        } else {
+            System.out.println("No cycle");
+        }
+    }
+}
+
+output:
+Cycle starts at: 2
